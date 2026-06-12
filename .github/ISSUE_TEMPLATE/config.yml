@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Privacy policy
+    url: https://renoman1195.github.io/TraceWear-Releases/privacy/
+    about: Review how TraceWear handles local and optional network data.
+  - name: Security reporting guidance
+    url: https://github.com/Renoman1195/TraceWear-Releases/blob/main/SECURITY.md
+    about: Do not disclose sensitive security details publicly.

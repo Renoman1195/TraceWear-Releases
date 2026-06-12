@@ -1,0 +1,46 @@
+name: Bug report
+description: Report a reproducible TraceWear problem without sensitive data.
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Never post sensitive vehicle, maintenance, personnel, organization, classified, controlled, or export-restricted information. Save the in-app bug report locally, review it, and attach it only when safe."
+  - type: input
+    id: version
+    attributes:
+      label: TraceWear version
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: workflow
+    attributes:
+      label: Workflow
+      options: [Startup, Simulation, Replay, Capture import, Analysis, Report export, Help, Update, Hardware preview, Install or uninstall, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include only sanitized information.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Public-data confirmation
+      options:
+        - label: I removed sensitive and restricted information from this report and its attachments.
+          required: true

@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+latest.json
+SHA256SUMS.txt
+*.exe
+*.msi
+*.sig
+*.zip
