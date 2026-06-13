@@ -81,6 +81,7 @@ footer { padding: 28px 5vw; display: flex; justify-content: space-between; gap: 
 .document h2 { margin-top: 42px; font-size: 1.55rem; }
 .document p, .document li { color: #c7d2cc; line-height: 1.75; }
 .document code, .checksum-output { font-family: Consolas, monospace; overflow-wrap: anywhere; }
+.document pre { max-width: 100%; white-space: pre-wrap; word-break: break-word; }
 .back-link { display: inline-block; margin-bottom: 42px; color: #e3b43a; }
 .notice { padding: 16px; border-left: 3px solid #d4a11e; background: #111c17; }
 
