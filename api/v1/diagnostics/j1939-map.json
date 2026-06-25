@@ -1,0 +1,181 @@
+{
+  "protocol": "J1939",
+  "version": "0.1.0",
+  "mappings": [
+    {
+      "spn": 110,
+      "fmi": 15,
+      "label": "Engine coolant temperature high",
+      "warning": "High coolant temperature increases near-term risk for the engine, radiator, coolant pump, and turbocharger.",
+      "affected_component_ids": [
+        "fmtv.engine",
+        "fmtv.turbocharger",
+        "fmtv.engine.ecm",
+        "fmtv.cooling.radiator",
+        "fmtv.cooling.water_pump",
+        "hmmwv.engine",
+        "hmmwv.engine.oil_cooler",
+        "hmmwv.cooling.radiator"
+      ],
+      "risk_multiplier": 1.18,
+      "snapshot_adjustment": {
+        "env_temperature_c_delta": 6.0,
+        "env_dust_level_delta": 0.0,
+        "avg_vibration_level_delta": 0.0,
+        "normalized_engine_effort_delta": 0.08,
+        "maintenance_score_delta": -0.04
+      }
+    },
+    {
+      "spn": 168,
+      "fmi": 1,
+      "label": "Battery potential below normal",
+      "warning": "Low system voltage can degrade starter reliability, control modules, sensors, and CTIS behavior.",
+      "affected_component_ids": [
+        "fmtv.electrical.batteries",
+        "fmtv.electrical.alternator",
+        "fmtv.electrical.starter",
+        "fmtv.ctis",
+        "fmtv.engine.ecm",
+        "hmmwv.electrical.batteries",
+        "hmmwv.electrical.alternator",
+        "hmmwv.electrical.glow_plug_controller"
+      ],
+      "risk_multiplier": 1.12,
+      "snapshot_adjustment": {
+        "env_temperature_c_delta": 0.0,
+        "env_dust_level_delta": 0.0,
+        "avg_vibration_level_delta": 0.02,
+        "normalized_engine_effort_delta": 0.0,
+        "maintenance_score_delta": -0.03
+      }
+    },
+    {
+      "spn": 91,
+      "fmi": 2,
+      "label": "Accelerator pedal position erratic",
+      "warning": "Erratic throttle input can indicate control signal instability and can stress drivetrain control behavior.",
+      "affected_component_ids": [
+        "fmtv.transmission",
+        "fmtv.engine.ecm",
+        "fmtv.drivetrain.u_joints",
+        "hmmwv.transmission",
+        "hmmwv.transfer_case",
+        "hmmwv.drivetrain.halfshafts"
+      ],
+      "risk_multiplier": 1.1,
+      "snapshot_adjustment": {
+        "env_temperature_c_delta": 0.0,
+        "env_dust_level_delta": 0.0,
+        "avg_vibration_level_delta": 0.03,
+        "normalized_engine_effort_delta": 0.04,
+        "maintenance_score_delta": -0.02
+      }
+    },
+    {
+      "spn": 84,
+      "fmi": 10,
+      "label": "Wheel-based vehicle speed abnormal rate of change",
+      "warning": "Speed signal instability can correlate with ABS, wheel-end, CTIS, or hub sensor issues.",
+      "affected_component_ids": [
+        "fmtv.front_axle.wheel_bearings",
+        "fmtv.hub_seals",
+        "fmtv.brakes.air_system",
+        "fmtv.brakes.slack_adjusters",
+        "fmtv.ctis",
+        "hmmwv.geared_hubs",
+        "hmmwv.suspension.ball_joints",
+        "hmmwv.steering.tie_rods",
+        "hmmwv.brakes.hydroboost"
+      ],
+      "risk_multiplier": 1.15,
+      "snapshot_adjustment": {
+        "env_temperature_c_delta": 0.0,
+        "env_dust_level_delta": 0.0,
+        "avg_vibration_level_delta": 0.04,
+        "normalized_engine_effort_delta": 0.0,
+        "maintenance_score_delta": -0.03
+      }
+    },
+    {
+      "spn": 102,
+      "fmi": 16,
+      "label": "Boost pressure high",
+      "warning": "Boost pressure outside expected range increases turbocharger and intake system risk.",
+      "affected_component_ids": [
+        "fmtv.turbocharger",
+        "fmtv.air_filter",
+        "fmtv.engine"
+      ],
+      "risk_multiplier": 1.16,
+      "snapshot_adjustment": {
+        "env_temperature_c_delta": 2.0,
+        "env_dust_level_delta": 0.01,
+        "avg_vibration_level_delta": 0.0,
+        "normalized_engine_effort_delta": 0.06,
+        "maintenance_score_delta": -0.02
+      }
+    },
+    {
+      "spn": 107,
+      "fmi": 16,
+      "label": "Engine air filter differential pressure high",
+      "warning": "High intake restriction can accelerate air filter loading, turbocharger heat, and engine wear.",
+      "affected_component_ids": [
+        "fmtv.air_filter",
+        "fmtv.turbocharger",
+        "fmtv.engine",
+        "hmmwv.air_filter",
+        "hmmwv.engine"
+      ],
+      "risk_multiplier": 1.14,
+      "snapshot_adjustment": {
+        "env_temperature_c_delta": 1.0,
+        "env_dust_level_delta": 0.08,
+        "avg_vibration_level_delta": 0.0,
+        "normalized_engine_effort_delta": 0.04,
+        "maintenance_score_delta": -0.03
+      }
+    },
+    {
+      "spn": 177,
+      "fmi": 15,
+      "label": "Transmission oil temperature high",
+      "warning": "High transmission temperature can reduce fluid life and increase clutch, cooler, and transfer-case risk.",
+      "affected_component_ids": [
+        "fmtv.transmission",
+        "fmtv.transmission.cooler",
+        "fmtv.transfer_case",
+        "hmmwv.transmission",
+        "hmmwv.transfer_case"
+      ],
+      "risk_multiplier": 1.17,
+      "snapshot_adjustment": {
+        "env_temperature_c_delta": 2.0,
+        "env_dust_level_delta": 0.0,
+        "avg_vibration_level_delta": 0.01,
+        "normalized_engine_effort_delta": 0.05,
+        "maintenance_score_delta": -0.03
+      }
+    },
+    {
+      "spn": 1068,
+      "fmi": 1,
+      "label": "Brake air pressure below normal",
+      "warning": "Low air pressure is a safety-critical brake-system condition requiring immediate inspection.",
+      "affected_component_ids": [
+        "fmtv.brakes.air_system",
+        "fmtv.brakes.air_dryer",
+        "fmtv.brakes.slack_adjusters"
+      ],
+      "risk_multiplier": 1.22,
+      "snapshot_adjustment": {
+        "env_temperature_c_delta": 0.0,
+        "env_dust_level_delta": 0.0,
+        "avg_vibration_level_delta": 0.02,
+        "normalized_engine_effort_delta": 0.0,
+        "maintenance_score_delta": -0.05
+      }
+    }
+  ]
+}

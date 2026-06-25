@@ -1,0 +1,1114 @@
+{
+  "vehicle_type": "FMTV",
+  "version": "0.2.0",
+  "components": [
+    {
+      "id": "fmtv.engine",
+      "name": "Caterpillar C7 Engine",
+      "category": "engine",
+      "system": "Powertrain",
+      "subsystem": "Engine assembly",
+      "aliases": [
+        "C7",
+        "engine assembly"
+      ],
+      "design_life_hours": 12000,
+      "design_life_km": 300000,
+      "standard_service_interval_hours": 500,
+      "criticality": 9.5,
+      "sensitivity": {
+        "thermal": 1.0,
+        "mechanical_torque": 0.8,
+        "vibrational": 0.7,
+        "pressure": 0.8
+      },
+      "failure_modes": [
+        "VibrationalFatigue",
+        "BearingWear"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "coolant_temp_c",
+        "engine_load_pct",
+        "oil_pressure_kpa",
+        "engine_speed_rpm"
+      ],
+      "related_spns": [
+        110,
+        102,
+        91
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [
+        "fmtv.turbocharger",
+        "fmtv.engine.ecm",
+        "fmtv.fuel.injectors",
+        "fmtv.air_filter",
+        "fmtv.cooling.radiator",
+        "fmtv.cooling.water_pump"
+      ],
+      "inspection_points": [
+        "Check oil pressure trend",
+        "Inspect mounts and leaks",
+        "Review coolant temperature history"
+      ],
+      "material": "CastIron_Grey",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.engine.ecm",
+      "name": "Engine Control Module",
+      "category": "electronics",
+      "system": "Powertrain",
+      "subsystem": "Engine controls",
+      "aliases": [
+        "ECM",
+        "engine computer"
+      ],
+      "design_life_hours": 9000,
+      "design_life_km": 240000,
+      "standard_service_interval_hours": 500,
+      "criticality": 7.9,
+      "sensitivity": {
+        "thermal": 0.5,
+        "mechanical_torque": 0.1,
+        "vibrational": 0.7,
+        "pressure": 0.1
+      },
+      "failure_modes": [
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "battery_voltage",
+        "engine_load_pct",
+        "accelerator_position_pct"
+      ],
+      "related_spns": [
+        91,
+        168
+      ],
+      "parent_component_id": "fmtv.engine",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check connector corrosion",
+        "Verify stable system voltage",
+        "Inspect harness strain relief"
+      ],
+      "material": "Unknown",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.turbocharger",
+      "name": "Turbocharger",
+      "category": "turbo",
+      "system": "Powertrain",
+      "subsystem": "Air induction",
+      "aliases": [
+        "turbo",
+        "boost system"
+      ],
+      "design_life_hours": 8000,
+      "design_life_km": 220000,
+      "standard_service_interval_hours": 500,
+      "criticality": 8.8,
+      "sensitivity": {
+        "thermal": 1.0,
+        "mechanical_torque": 0.9,
+        "vibrational": 0.6,
+        "pressure": 1.0
+      },
+      "failure_modes": [
+        "BearingWear",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "boost_pressure_kpa",
+        "intake_temp_c",
+        "engine_load_pct"
+      ],
+      "related_spns": [
+        102,
+        110
+      ],
+      "parent_component_id": "fmtv.engine",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check shaft play",
+        "Inspect oil feed and return lines",
+        "Listen for compressor whine"
+      ],
+      "material": "Steel4130_Chromoly",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.fuel.injectors",
+      "name": "HEUI Fuel Injectors",
+      "category": "fuel",
+      "system": "Fuel",
+      "subsystem": "Injection",
+      "aliases": [
+        "injectors",
+        "HEUI injectors"
+      ],
+      "design_life_hours": 7000,
+      "design_life_km": 180000,
+      "standard_service_interval_hours": 500,
+      "criticality": 8.3,
+      "sensitivity": {
+        "thermal": 0.7,
+        "mechanical_torque": 0.5,
+        "vibrational": 0.6,
+        "pressure": 0.9
+      },
+      "failure_modes": [
+        "BearingWear",
+        "SealPerished"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "fuel_pressure_kpa",
+        "engine_load_pct",
+        "engine_speed_rpm"
+      ],
+      "related_spns": [
+        94,
+        157
+      ],
+      "parent_component_id": "fmtv.engine",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check fuel pressure stability",
+        "Inspect for hard starts or misfire",
+        "Review fuel filter maintenance"
+      ],
+      "material": "Steel1020_Carbon",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.air_filter",
+      "name": "Air Filter/Air Cleaner",
+      "category": "air_filter",
+      "system": "Air induction",
+      "subsystem": "Filtration",
+      "aliases": [
+        "air cleaner",
+        "intake filter"
+      ],
+      "design_life_hours": 1000,
+      "design_life_km": 25000,
+      "standard_service_interval_hours": 250,
+      "criticality": 6.8,
+      "sensitivity": {
+        "thermal": 0.3,
+        "mechanical_torque": 0.1,
+        "vibrational": 0.5,
+        "pressure": 0.8
+      },
+      "failure_modes": [
+        "SealPerished"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "intake_restriction_kpa",
+        "env_dust_level"
+      ],
+      "related_spns": [
+        107
+      ],
+      "parent_component_id": "fmtv.engine",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Inspect filter loading",
+        "Check air box seals",
+        "Check restriction indicator"
+      ],
+      "material": "Unknown",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.cooling.radiator",
+      "name": "Radiator",
+      "category": "cooling",
+      "system": "Cooling",
+      "subsystem": "Heat exchanger",
+      "aliases": [
+        "cooler",
+        "heat exchanger"
+      ],
+      "design_life_hours": 7000,
+      "design_life_km": 180000,
+      "standard_service_interval_hours": 500,
+      "criticality": 8.2,
+      "sensitivity": {
+        "thermal": 1.0,
+        "mechanical_torque": 0.2,
+        "vibrational": 0.4,
+        "pressure": 0.8
+      },
+      "failure_modes": [
+        "SealPerished",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "coolant_temp_c",
+        "coolant_level_pct"
+      ],
+      "related_spns": [
+        110,
+        111
+      ],
+      "parent_component_id": "fmtv.engine",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check fins for blockage",
+        "Inspect tanks and seams for leaks",
+        "Pressure-test cooling system"
+      ],
+      "material": "Aluminum6061_T6",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.cooling.water_pump",
+      "name": "Coolant Pump",
+      "category": "cooling",
+      "system": "Cooling",
+      "subsystem": "Coolant circulation",
+      "aliases": [
+        "water pump",
+        "coolant pump"
+      ],
+      "design_life_hours": 6500,
+      "design_life_km": 170000,
+      "standard_service_interval_hours": 500,
+      "criticality": 8.5,
+      "sensitivity": {
+        "thermal": 0.8,
+        "mechanical_torque": 0.6,
+        "vibrational": 0.7,
+        "pressure": 0.9
+      },
+      "failure_modes": [
+        "BearingWear",
+        "SealPerished"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "coolant_temp_c",
+        "coolant_level_pct",
+        "engine_speed_rpm"
+      ],
+      "related_spns": [
+        110,
+        111
+      ],
+      "parent_component_id": "fmtv.engine",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check weep hole leakage",
+        "Listen for bearing noise",
+        "Inspect belt or drive condition"
+      ],
+      "material": "Steel1020_Carbon",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.transmission",
+      "name": "Allison MD3700/MD3070PT Transmission",
+      "category": "transmission",
+      "system": "Powertrain",
+      "subsystem": "Transmission",
+      "aliases": [
+        "Allison",
+        "MD3700",
+        "MD3070PT"
+      ],
+      "design_life_hours": 15000,
+      "design_life_km": 400000,
+      "standard_service_interval_hours": 1000,
+      "criticality": 8.8,
+      "sensitivity": {
+        "thermal": 0.9,
+        "mechanical_torque": 1.0,
+        "vibrational": 0.8,
+        "pressure": 0.6
+      },
+      "failure_modes": [
+        "GearShear",
+        "SplineWear",
+        "BearingWear"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "trans_temp_c",
+        "selected_gear",
+        "output_speed_rpm",
+        "engine_load_pct"
+      ],
+      "related_spns": [
+        91,
+        177
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [
+        "fmtv.transmission.cooler",
+        "fmtv.transfer_case"
+      ],
+      "inspection_points": [
+        "Check fluid level and color",
+        "Review shift-quality complaints",
+        "Inspect cooler lines"
+      ],
+      "material": "Steel4130_Chromoly",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.transmission.cooler",
+      "name": "Transmission Oil Cooler",
+      "category": "cooling",
+      "system": "Powertrain",
+      "subsystem": "Transmission cooling",
+      "aliases": [
+        "trans cooler"
+      ],
+      "design_life_hours": 9000,
+      "design_life_km": 220000,
+      "standard_service_interval_hours": 1000,
+      "criticality": 7.7,
+      "sensitivity": {
+        "thermal": 0.9,
+        "mechanical_torque": 0.3,
+        "vibrational": 0.4,
+        "pressure": 0.8
+      },
+      "failure_modes": [
+        "SealPerished",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "trans_temp_c",
+        "coolant_temp_c"
+      ],
+      "related_spns": [
+        177,
+        110
+      ],
+      "parent_component_id": "fmtv.transmission",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Inspect cooler line leaks",
+        "Check heat exchanger blockage",
+        "Review transmission temperature trend"
+      ],
+      "material": "Aluminum6061_T6",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.transfer_case",
+      "name": "Integrated Transfer Case",
+      "category": "drivetrain",
+      "system": "Powertrain",
+      "subsystem": "Transfer case",
+      "aliases": [
+        "transfer case"
+      ],
+      "design_life_hours": 14000,
+      "design_life_km": 360000,
+      "standard_service_interval_hours": 1000,
+      "criticality": 8.2,
+      "sensitivity": {
+        "thermal": 0.5,
+        "mechanical_torque": 1.0,
+        "vibrational": 0.8,
+        "pressure": 0.4
+      },
+      "failure_modes": [
+        "GearShear",
+        "SplineWear",
+        "BearingWear"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "transfer_case_temp_c",
+        "vehicle_speed_mps",
+        "engine_load_pct"
+      ],
+      "related_spns": [
+        91,
+        84
+      ],
+      "parent_component_id": "fmtv.transmission",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check case leaks",
+        "Inspect driveline lash",
+        "Verify range selection"
+      ],
+      "material": "Steel4130_Chromoly",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.drivetrain.u_joints",
+      "name": "Universal Joints",
+      "category": "coupling",
+      "system": "Drivetrain",
+      "subsystem": "Prop shafts",
+      "aliases": [
+        "u-joints",
+        "universal joints"
+      ],
+      "design_life_hours": 9000,
+      "design_life_km": 220000,
+      "standard_service_interval_hours": 1000,
+      "criticality": 7.6,
+      "sensitivity": {
+        "thermal": 0.2,
+        "mechanical_torque": 1.0,
+        "vibrational": 1.0,
+        "pressure": 0.2
+      },
+      "failure_modes": [
+        "SplineWear",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "avg_vibration_level",
+        "vehicle_speed_mps",
+        "engine_load_pct"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": "fmtv.transfer_case",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check play at caps",
+        "Inspect grease seals",
+        "Listen for clunk on torque reversal"
+      ],
+      "material": "Steel4130_Chromoly",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.front_axle.differential",
+      "name": "Front Differential",
+      "category": "differential",
+      "system": "Axles",
+      "subsystem": "Front axle",
+      "aliases": [
+        "front diff"
+      ],
+      "design_life_hours": 16000,
+      "design_life_km": 380000,
+      "standard_service_interval_hours": 1000,
+      "criticality": 8.0,
+      "sensitivity": {
+        "thermal": 0.4,
+        "mechanical_torque": 1.0,
+        "vibrational": 0.8,
+        "pressure": 0.4
+      },
+      "failure_modes": [
+        "GearShear",
+        "BearingWear"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "vehicle_speed_mps",
+        "avg_vibration_level"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check gear oil condition",
+        "Inspect housing leaks",
+        "Listen for whine under load"
+      ],
+      "material": "Steel4130_Chromoly",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.rear_axle.differential",
+      "name": "Rear Differential",
+      "category": "differential",
+      "system": "Axles",
+      "subsystem": "Rear tandem axle",
+      "aliases": [
+        "rear diff"
+      ],
+      "design_life_hours": 16000,
+      "design_life_km": 380000,
+      "standard_service_interval_hours": 1000,
+      "criticality": 8.0,
+      "sensitivity": {
+        "thermal": 0.4,
+        "mechanical_torque": 1.0,
+        "vibrational": 0.8,
+        "pressure": 0.4
+      },
+      "failure_modes": [
+        "GearShear",
+        "BearingWear"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "vehicle_speed_mps",
+        "avg_vibration_level"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check gear oil condition",
+        "Inspect housing leaks",
+        "Listen for whine under load"
+      ],
+      "material": "Steel4130_Chromoly",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.front_axle.wheel_bearings",
+      "name": "Front Wheel Bearings",
+      "category": "bearing",
+      "system": "Axles",
+      "subsystem": "Wheel ends",
+      "aliases": [
+        "hub bearings",
+        "wheel bearings"
+      ],
+      "design_life_hours": 10000,
+      "design_life_km": 250000,
+      "standard_service_interval_hours": 1000,
+      "criticality": 8.0,
+      "sensitivity": {
+        "thermal": 0.4,
+        "mechanical_torque": 0.9,
+        "vibrational": 1.0,
+        "pressure": 0.2
+      },
+      "failure_modes": [
+        "BearingWear",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "vehicle_speed_mps",
+        "avg_vibration_level",
+        "hub_temp_c"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check hub temperature",
+        "Inspect end play",
+        "Listen for wheel-end growl"
+      ],
+      "material": "Steel4130_Chromoly",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.hub_seals",
+      "name": "Hub Seals",
+      "category": "seal",
+      "system": "Axles",
+      "subsystem": "Wheel ends",
+      "aliases": [
+        "wheel seals",
+        "hub oil seals"
+      ],
+      "design_life_hours": 6000,
+      "design_life_km": 160000,
+      "standard_service_interval_hours": 500,
+      "criticality": 7.2,
+      "sensitivity": {
+        "thermal": 0.5,
+        "mechanical_torque": 0.5,
+        "vibrational": 0.8,
+        "pressure": 0.8
+      },
+      "failure_modes": [
+        "SealPerished",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "hub_temp_c",
+        "avg_vibration_level"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": "fmtv.front_axle.wheel_bearings",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Inspect for gear oil sling",
+        "Check hub oil level",
+        "Inspect seal lip contamination"
+      ],
+      "material": "Rubber_Synthetic",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.brakes.air_system",
+      "name": "Air Brake System",
+      "category": "brake",
+      "system": "Brakes",
+      "subsystem": "Air brake supply",
+      "aliases": [
+        "air brakes"
+      ],
+      "design_life_hours": 9000,
+      "design_life_km": 220000,
+      "standard_service_interval_hours": 500,
+      "criticality": 9.2,
+      "sensitivity": {
+        "thermal": 0.6,
+        "mechanical_torque": 0.5,
+        "vibrational": 0.6,
+        "pressure": 1.0
+      },
+      "failure_modes": [
+        "SealPerished",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "brake_air_pressure_psi",
+        "abs_active_flag",
+        "vehicle_speed_mps"
+      ],
+      "related_spns": [
+        84,
+        1068
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [
+        "fmtv.brakes.air_dryer",
+        "fmtv.brakes.slack_adjusters"
+      ],
+      "inspection_points": [
+        "Check air build rate",
+        "Drain tanks and inspect moisture",
+        "Check brake application leakdown"
+      ],
+      "material": "Rubber_Synthetic",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.brakes.air_dryer",
+      "name": "Air Dryer",
+      "category": "brake",
+      "system": "Brakes",
+      "subsystem": "Air treatment",
+      "aliases": [
+        "dryer",
+        "air dryer"
+      ],
+      "design_life_hours": 5000,
+      "design_life_km": 120000,
+      "standard_service_interval_hours": 500,
+      "criticality": 7.4,
+      "sensitivity": {
+        "thermal": 0.4,
+        "mechanical_torque": 0.2,
+        "vibrational": 0.5,
+        "pressure": 1.0
+      },
+      "failure_modes": [
+        "SealPerished"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "brake_air_pressure_psi",
+        "ambient_humidity_pct"
+      ],
+      "related_spns": [
+        1068
+      ],
+      "parent_component_id": "fmtv.brakes.air_system",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check purge cycle",
+        "Inspect cartridge age",
+        "Check for oil contamination"
+      ],
+      "material": "Rubber_Synthetic",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.brakes.slack_adjusters",
+      "name": "Automatic Slack Adjusters",
+      "category": "brake",
+      "system": "Brakes",
+      "subsystem": "Wheel brakes",
+      "aliases": [
+        "slack adjusters"
+      ],
+      "design_life_hours": 8000,
+      "design_life_km": 180000,
+      "standard_service_interval_hours": 500,
+      "criticality": 8.2,
+      "sensitivity": {
+        "thermal": 0.5,
+        "mechanical_torque": 0.8,
+        "vibrational": 0.7,
+        "pressure": 0.3
+      },
+      "failure_modes": [
+        "VibrationalFatigue",
+        "SplineWear"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "brake_application_count",
+        "vehicle_speed_mps"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": "fmtv.brakes.air_system",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check pushrod travel",
+        "Inspect clevis pins",
+        "Verify automatic adjustment"
+      ],
+      "material": "Steel1020_Carbon",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.ctis",
+      "name": "Central Tire Inflation System",
+      "category": "electronics",
+      "system": "Tires",
+      "subsystem": "CTIS",
+      "aliases": [
+        "CTIS"
+      ],
+      "design_life_hours": 7000,
+      "design_life_km": 180000,
+      "standard_service_interval_hours": 500,
+      "criticality": 6.5,
+      "sensitivity": {
+        "thermal": 0.4,
+        "mechanical_torque": 0.2,
+        "vibrational": 0.7,
+        "pressure": 1.0
+      },
+      "failure_modes": [
+        "SealPerished",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "ctis_pressure_psi",
+        "battery_voltage",
+        "vehicle_speed_mps"
+      ],
+      "related_spns": [
+        84,
+        168
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check wheel valve leaks",
+        "Inspect rotary unions",
+        "Verify mode changes"
+      ],
+      "material": "Rubber_Synthetic",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.electrical.batteries",
+      "name": "24V Battery Set",
+      "category": "battery",
+      "system": "Electrical",
+      "subsystem": "Power storage",
+      "aliases": [
+        "batteries",
+        "6TL",
+        "8D"
+      ],
+      "design_life_hours": 6000,
+      "design_life_km": 140000,
+      "standard_service_interval_hours": 250,
+      "criticality": 7.2,
+      "sensitivity": {
+        "thermal": 0.8,
+        "mechanical_torque": 0.1,
+        "vibrational": 0.6,
+        "pressure": 0.1
+      },
+      "failure_modes": [
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "battery_voltage",
+        "starter_current_a",
+        "ambient_temp_c"
+      ],
+      "related_spns": [
+        168
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Load-test batteries",
+        "Inspect terminals and grounds",
+        "Check charging voltage"
+      ],
+      "material": "Unknown",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.electrical.alternator",
+      "name": "Alternator and Voltage Regulator",
+      "category": "electronics",
+      "system": "Electrical",
+      "subsystem": "Charging",
+      "aliases": [
+        "alternator",
+        "voltage regulator"
+      ],
+      "design_life_hours": 8000,
+      "design_life_km": 200000,
+      "standard_service_interval_hours": 500,
+      "criticality": 7.6,
+      "sensitivity": {
+        "thermal": 0.7,
+        "mechanical_torque": 0.4,
+        "vibrational": 0.7,
+        "pressure": 0.2
+      },
+      "failure_modes": [
+        "BearingWear",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "battery_voltage",
+        "charging_current_a",
+        "engine_speed_rpm"
+      ],
+      "related_spns": [
+        168
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check charging output",
+        "Listen for bearing noise",
+        "Inspect belt tension"
+      ],
+      "material": "Steel1020_Carbon",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.electrical.starter",
+      "name": "Starter Motor",
+      "category": "electronics",
+      "system": "Electrical",
+      "subsystem": "Starting",
+      "aliases": [
+        "starter"
+      ],
+      "design_life_hours": 7500,
+      "design_life_km": 180000,
+      "standard_service_interval_hours": 500,
+      "criticality": 7.5,
+      "sensitivity": {
+        "thermal": 0.6,
+        "mechanical_torque": 0.7,
+        "vibrational": 0.6,
+        "pressure": 0.1
+      },
+      "failure_modes": [
+        "BearingWear",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "battery_voltage",
+        "starter_current_a",
+        "cranking_rpm"
+      ],
+      "related_spns": [
+        168
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check cranking speed",
+        "Inspect cable voltage drop",
+        "Listen for solenoid chatter"
+      ],
+      "material": "Steel1020_Carbon",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.suspension.shocks",
+      "name": "Shock Absorbers",
+      "category": "suspension",
+      "system": "Suspension",
+      "subsystem": "Damping",
+      "aliases": [
+        "shocks"
+      ],
+      "design_life_hours": 6000,
+      "design_life_km": 140000,
+      "standard_service_interval_hours": 500,
+      "criticality": 6.8,
+      "sensitivity": {
+        "thermal": 0.4,
+        "mechanical_torque": 0.7,
+        "vibrational": 1.0,
+        "pressure": 0.5
+      },
+      "failure_modes": [
+        "SealPerished",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "avg_vibration_level",
+        "terrain_offroad_ratio"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Inspect leakage",
+        "Check bushing wear",
+        "Review vibration trend"
+      ],
+      "material": "Steel1020_Carbon",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.steering.gearbox",
+      "name": "Power Steering Gear Box",
+      "category": "undercarriage",
+      "system": "Steering",
+      "subsystem": "Steering gear",
+      "aliases": [
+        "steering box",
+        "gear box"
+      ],
+      "design_life_hours": 12000,
+      "design_life_km": 260000,
+      "standard_service_interval_hours": 1000,
+      "criticality": 7.5,
+      "sensitivity": {
+        "thermal": 0.4,
+        "mechanical_torque": 0.7,
+        "vibrational": 0.7,
+        "pressure": 0.8
+      },
+      "failure_modes": [
+        "SealPerished",
+        "BearingWear"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "steering_pressure_kpa",
+        "vehicle_speed_mps"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check steering play",
+        "Inspect fluid leaks",
+        "Check pump noise under lock"
+      ],
+      "material": "Steel1020_Carbon",
+      "dimensions": 1.0
+    },
+    {
+      "id": "fmtv.tires",
+      "name": "Michelin 395/85R20 XZL Tires",
+      "category": "tire",
+      "system": "Tires",
+      "subsystem": "Tires and wheels",
+      "aliases": [
+        "tires",
+        "Michelin XZL"
+      ],
+      "design_life_hours": 4000,
+      "design_life_km": 65000,
+      "standard_service_interval_hours": 250,
+      "criticality": 7.0,
+      "sensitivity": {
+        "thermal": 0.5,
+        "mechanical_torque": 0.9,
+        "vibrational": 0.8,
+        "pressure": 0.9
+      },
+      "failure_modes": [
+        "VibrationalFatigue",
+        "SealPerished"
+      ],
+      "rated_gvw_kg": 10886,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "tire_pressure_psi",
+        "terrain_offroad_ratio",
+        "vehicle_speed_mps"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check tread depth",
+        "Inspect sidewall cuts",
+        "Verify inflation pressure"
+      ],
+      "material": "Rubber_Synthetic",
+      "dimensions": 1.0
+    }
+  ]
+}

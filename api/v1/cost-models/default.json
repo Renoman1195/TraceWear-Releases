@@ -1,0 +1,15 @@
+{
+  "name": "TraceWear Reference Cost Model",
+  "version": "2026.04",
+  "source": "assets/cost_models/default_demo_costs.json",
+  "notes": "Reference planning model for maintenance exposure. Replace with validated fleet cost data before procurement or readiness budgeting use.",
+  "base_inspection_usd": 4500.0,
+  "targeted_maintenance_usd": 13000.0,
+  "recovery_event_usd": 18000.0,
+  "mission_delay_usd": 9500.0,
+  "secondary_damage_usd": 12000.0,
+  "readiness_penalty_usd": 7500.0,
+  "risk_weight_multiplier": 1.0,
+  "urgent_item_usd": 2500.0,
+  "diagnostic_code_usd": 600.0
+}

@@ -1,0 +1,286 @@
+{
+  "vehicle_type": "FMTV",
+  "version": "research-2026.05",
+  "target_profile_id": "fmtv",
+  "research_notes": "Starter staging file for expanding the FMTV parts library. Entries are source-tracked candidates and should be reviewed against approved manuals, NSN data, OEM records, or customer maintenance records before promotion.",
+  "sources": [
+    {
+      "id": "tracewear_seed_review",
+      "title": "TraceWear internal starter review",
+      "source_type": "internal_seed",
+      "locator": "assets/parts_staging/fmtv_parts_staging.json",
+      "access_level": "internal",
+      "notes": "Placeholder seed used to exercise validation and review workflow. Replace or supplement with approved technical sources before operational use."
+    },
+    {
+      "id": "customer_maintenance_review_needed",
+      "title": "Customer maintenance records pending review",
+      "source_type": "customer_records",
+      "locator": "customer-controlled maintenance records pending source intake",
+      "access_level": "customer_controlled",
+      "notes": "Use for candidates that need customer records or official maintenance extracts before approval."
+    }
+  ],
+  "candidates": [
+    {
+      "component": {
+        "id": "fmtv.cooling.thermostat",
+        "name": "Engine Thermostat",
+        "category": "cooling",
+        "system": "Cooling",
+        "subsystem": "Engine coolant regulation",
+        "aliases": [
+          "thermostat",
+          "coolant thermostat"
+        ],
+        "design_life_hours": 4000,
+        "design_life_km": 100000,
+        "standard_service_interval_hours": 500,
+        "criticality": 6.6,
+        "sensitivity": {
+          "thermal": 0.9,
+          "mechanical_torque": 0.1,
+          "vibrational": 0.2,
+          "pressure": 0.7
+        },
+        "failure_modes": [
+          "SealPerished"
+        ],
+        "rated_gvw_kg": 10886,
+        "part_numbers": [],
+        "related_signal_keys": [
+          "coolant_temp_c"
+        ],
+        "related_spns": [
+          110
+        ],
+        "parent_component_id": null,
+        "child_component_ids": [],
+        "inspection_points": [
+          "Verify operating temperature stabilizes after warm-up",
+          "Inspect thermostat housing and gasket for leaks"
+        ],
+        "material": "Unknown",
+        "dimensions": 1.0
+      },
+      "source_ids": [
+        "tracewear_seed_review",
+        "customer_maintenance_review_needed"
+      ],
+      "confidence": 0.58,
+      "review_status": "needs_review",
+      "reviewer_notes": "Confirm exact FMTV variant fitment and approved replacement interval."
+    },
+    {
+      "component": {
+        "id": "fmtv.fuel.lift_pump",
+        "name": "Fuel Lift Pump",
+        "category": "fuel",
+        "system": "Fuel",
+        "subsystem": "Low-pressure fuel supply",
+        "aliases": [
+          "transfer pump",
+          "supply pump"
+        ],
+        "design_life_hours": 6000,
+        "design_life_km": 160000,
+        "standard_service_interval_hours": 500,
+        "criticality": 7.8,
+        "sensitivity": {
+          "thermal": 0.4,
+          "mechanical_torque": 0.5,
+          "vibrational": 0.5,
+          "pressure": 0.8
+        },
+        "failure_modes": [
+          "BearingWear",
+          "SealPerished"
+        ],
+        "rated_gvw_kg": 10886,
+        "part_numbers": [],
+        "related_signal_keys": [
+          "fuel_pressure_kpa",
+          "engine_load_pct"
+        ],
+        "related_spns": [
+          94,
+          91
+        ],
+        "parent_component_id": null,
+        "child_component_ids": [],
+        "inspection_points": [
+          "Check low-pressure fuel supply trend",
+          "Inspect pump body and fittings for leaks",
+          "Listen for abnormal pump noise during key-on"
+        ],
+        "material": "Unknown",
+        "dimensions": 1.0
+      },
+      "source_ids": [
+        "tracewear_seed_review",
+        "customer_maintenance_review_needed"
+      ],
+      "confidence": 0.52,
+      "review_status": "needs_review",
+      "reviewer_notes": "Needs source-backed SPN mapping and confirmed service exposure values."
+    },
+    {
+      "component": {
+        "id": "fmtv.air_system.air_dryer",
+        "name": "Air Dryer",
+        "category": "brake",
+        "system": "Brakes",
+        "subsystem": "Air brake supply",
+        "aliases": [
+          "brake air dryer",
+          "desiccant dryer"
+        ],
+        "design_life_hours": 3000,
+        "design_life_km": 80000,
+        "standard_service_interval_hours": 500,
+        "criticality": 8.2,
+        "sensitivity": {
+          "thermal": 0.3,
+          "mechanical_torque": 0.1,
+          "vibrational": 0.4,
+          "pressure": 1.0
+        },
+        "failure_modes": [
+          "SealPerished",
+          "VibrationalFatigue"
+        ],
+        "rated_gvw_kg": 10886,
+        "part_numbers": [],
+        "related_signal_keys": [
+          "brake_air_pressure_kpa"
+        ],
+        "related_spns": [
+          1068
+        ],
+        "parent_component_id": null,
+        "child_component_ids": [],
+        "inspection_points": [
+          "Drain tanks and check for moisture carryover",
+          "Inspect purge cycle and exhaust contamination",
+          "Check air pressure recovery time"
+        ],
+        "material": "Unknown",
+        "dimensions": 1.0
+      },
+      "source_ids": [
+        "tracewear_seed_review",
+        "customer_maintenance_review_needed"
+      ],
+      "confidence": 0.6,
+      "review_status": "needs_review",
+      "reviewer_notes": "Strong candidate for readiness scoring once service interval and part family are verified."
+    },
+    {
+      "component": {
+        "id": "fmtv.air_system.compressor",
+        "name": "Air Compressor",
+        "category": "brake",
+        "system": "Brakes",
+        "subsystem": "Air brake supply",
+        "aliases": [
+          "brake compressor",
+          "air supply compressor"
+        ],
+        "design_life_hours": 7000,
+        "design_life_km": 180000,
+        "standard_service_interval_hours": 500,
+        "criticality": 8.7,
+        "sensitivity": {
+          "thermal": 0.7,
+          "mechanical_torque": 0.6,
+          "vibrational": 0.6,
+          "pressure": 1.0
+        },
+        "failure_modes": [
+          "BearingWear",
+          "SealPerished"
+        ],
+        "rated_gvw_kg": 10886,
+        "part_numbers": [],
+        "related_signal_keys": [
+          "brake_air_pressure_kpa",
+          "engine_load_pct"
+        ],
+        "related_spns": [
+          1068,
+          91
+        ],
+        "parent_component_id": null,
+        "child_component_ids": [],
+        "inspection_points": [
+          "Measure air system build time",
+          "Inspect compressor discharge line for oil carryover",
+          "Check mounting vibration and drive condition"
+        ],
+        "material": "Unknown",
+        "dimensions": 1.0
+      },
+      "source_ids": [
+        "tracewear_seed_review",
+        "customer_maintenance_review_needed"
+      ],
+      "confidence": 0.57,
+      "review_status": "needs_review",
+      "reviewer_notes": "Needs confirmed diagnostic hooks and inspection thresholds."
+    },
+    {
+      "component": {
+        "id": "fmtv.electrical.engine_harness",
+        "name": "Engine Wiring Harness",
+        "category": "electronics",
+        "system": "Electrical",
+        "subsystem": "Engine controls",
+        "aliases": [
+          "engine harness",
+          "powertrain harness"
+        ],
+        "design_life_hours": 9000,
+        "design_life_km": 240000,
+        "standard_service_interval_hours": 500,
+        "criticality": 7.5,
+        "sensitivity": {
+          "thermal": 0.5,
+          "mechanical_torque": 0.1,
+          "vibrational": 0.8,
+          "pressure": 0.1
+        },
+        "failure_modes": [
+          "VibrationalFatigue"
+        ],
+        "rated_gvw_kg": 10886,
+        "part_numbers": [],
+        "related_signal_keys": [
+          "battery_voltage",
+          "coolant_temp_c",
+          "engine_load_pct"
+        ],
+        "related_spns": [
+          168,
+          110,
+          91
+        ],
+        "parent_component_id": null,
+        "child_component_ids": [],
+        "inspection_points": [
+          "Inspect connector locks and strain relief",
+          "Check harness routing near heat and abrasion points",
+          "Review intermittent sensor faults for shared harness paths"
+        ],
+        "material": "Unknown",
+        "dimensions": 1.0
+      },
+      "source_ids": [
+        "tracewear_seed_review",
+        "customer_maintenance_review_needed"
+      ],
+      "confidence": 0.62,
+      "review_status": "needs_review",
+      "reviewer_notes": "Candidate should be split by harness section when customer wiring documentation is available."
+    }
+  ]
+}

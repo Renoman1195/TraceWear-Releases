@@ -1,0 +1,28 @@
+{
+  "schema": "tracewear.cloud_catalog.v1",
+  "generated_at": "2026-06-25T00:00:00Z",
+  "channel": "stable",
+  "organization_id": "tracewear-public",
+  "vehicles": [
+    {
+      "profile_id": "fmtv",
+      "display_name": "FMTV",
+      "vehicle_type": "FMTV",
+      "component_library_url": "https://tracewearcloud.z19.web.core.windows.net/api/v1/component-libraries/fmtv.json",
+      "parts_staging_url": "https://tracewearcloud.z19.web.core.windows.net/api/v1/parts/fmtv/staging.json",
+      "diagnostic_map_url": "https://tracewearcloud.z19.web.core.windows.net/api/v1/diagnostics/j1939-map.json",
+      "cost_model_url": "https://tracewearcloud.z19.web.core.windows.net/api/v1/cost-models/default.json",
+      "status": "seed"
+    },
+    {
+      "profile_id": "hmmwv_m1151a1",
+      "display_name": "HMMWV M1151A1",
+      "vehicle_type": "HMMWV",
+      "component_library_url": "https://tracewearcloud.z19.web.core.windows.net/api/v1/component-libraries/hmmwv-m1151a1.json",
+      "parts_staging_url": "",
+      "diagnostic_map_url": "https://tracewearcloud.z19.web.core.windows.net/api/v1/diagnostics/j1939-map.json",
+      "cost_model_url": "https://tracewearcloud.z19.web.core.windows.net/api/v1/cost-models/default.json",
+      "status": "seed"
+    }
+  ]
+}
