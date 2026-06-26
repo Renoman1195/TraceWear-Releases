@@ -1,0 +1,959 @@
+{
+  "vehicle_type": "HMMWV M998 Base Utility",
+  "version": "0.3.0-base",
+  "components": [
+    {
+      "id": "hmmwv.engine",
+      "name": "6.5L V8 Diesel Engine",
+      "category": "engine",
+      "system": "Powertrain",
+      "subsystem": "Engine assembly",
+      "aliases": [
+        "6.5 diesel",
+        "engine"
+      ],
+      "design_life_hours": 10000,
+      "design_life_km": 240000,
+      "standard_service_interval_hours": 500,
+      "criticality": 9.2,
+      "sensitivity": {
+        "thermal": 1.0,
+        "mechanical_torque": 0.7,
+        "vibrational": 0.7,
+        "pressure": 0.7
+      },
+      "failure_modes": [
+        "BearingWear",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "coolant_temp_c",
+        "engine_load_pct",
+        "oil_pressure_kpa"
+      ],
+      "related_spns": [
+        110,
+        91
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [
+        "hmmwv.fuel.injection_pump",
+        "hmmwv.air_filter",
+        "hmmwv.cooling.radiator",
+        "hmmwv.engine.oil_cooler"
+      ],
+      "inspection_points": [
+        "Check oil pressure trend",
+        "Inspect mounts and leaks",
+        "Review coolant temperature history"
+      ],
+      "material": "CastIron_Grey",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.engine.oil_cooler",
+      "name": "Engine Oil Cooler",
+      "category": "cooling",
+      "system": "Powertrain",
+      "subsystem": "Engine lubrication",
+      "aliases": [
+        "oil cooler"
+      ],
+      "design_life_hours": 6500,
+      "design_life_km": 150000,
+      "standard_service_interval_hours": 500,
+      "criticality": 7.8,
+      "sensitivity": {
+        "thermal": 0.9,
+        "mechanical_torque": 0.2,
+        "vibrational": 0.5,
+        "pressure": 0.8
+      },
+      "failure_modes": [
+        "SealPerished",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "oil_temp_c",
+        "oil_pressure_kpa",
+        "coolant_temp_c"
+      ],
+      "related_spns": [
+        110
+      ],
+      "parent_component_id": "hmmwv.engine",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Inspect cooler lines",
+        "Check oil/coolant cross-contamination",
+        "Review oil temperature trend"
+      ],
+      "material": "Aluminum6061_T6",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.cooling.radiator",
+      "name": "Radiator and Fan Clutch",
+      "category": "cooling",
+      "system": "Cooling",
+      "subsystem": "Heat exchanger and fan drive",
+      "aliases": [
+        "radiator",
+        "fan clutch",
+        "cooling stack"
+      ],
+      "design_life_hours": 6500,
+      "design_life_km": 150000,
+      "standard_service_interval_hours": 500,
+      "criticality": 8.0,
+      "sensitivity": {
+        "thermal": 1.0,
+        "mechanical_torque": 0.3,
+        "vibrational": 0.5,
+        "pressure": 0.8
+      },
+      "failure_modes": [
+        "SealPerished",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "coolant_temp_c",
+        "coolant_level_pct",
+        "fan_clutch_state"
+      ],
+      "related_spns": [
+        110,
+        111
+      ],
+      "parent_component_id": "hmmwv.engine",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Inspect fins and shroud blockage",
+        "Check fan clutch engagement",
+        "Pressure-test the cooling system"
+      ],
+      "material": "Aluminum6061_T6",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.fuel.injection_pump",
+      "name": "Stanadyne DB2 Fuel Injection Pump",
+      "category": "fuel",
+      "system": "Fuel",
+      "subsystem": "Injection",
+      "aliases": [
+        "DB2",
+        "injection pump"
+      ],
+      "design_life_hours": 7000,
+      "design_life_km": 170000,
+      "standard_service_interval_hours": 500,
+      "criticality": 8.4,
+      "sensitivity": {
+        "thermal": 0.7,
+        "mechanical_torque": 0.5,
+        "vibrational": 0.7,
+        "pressure": 0.9
+      },
+      "failure_modes": [
+        "BearingWear",
+        "SealPerished"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "fuel_pressure_kpa",
+        "engine_load_pct"
+      ],
+      "related_spns": [
+        94
+      ],
+      "parent_component_id": "hmmwv.engine",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check fuel delivery",
+        "Inspect throttle shaft leakage",
+        "Review hard-start complaints"
+      ],
+      "material": "Steel1020_Carbon",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.fuel.filters",
+      "name": "Primary and Secondary Fuel Filters",
+      "category": "fuel",
+      "system": "Fuel",
+      "subsystem": "Filtration",
+      "aliases": [
+        "fuel filters"
+      ],
+      "design_life_hours": 1500,
+      "design_life_km": 30000,
+      "standard_service_interval_hours": 250,
+      "criticality": 6.5,
+      "sensitivity": {
+        "thermal": 0.3,
+        "mechanical_torque": 0.1,
+        "vibrational": 0.5,
+        "pressure": 0.9
+      },
+      "failure_modes": [
+        "SealPerished"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "fuel_pressure_kpa",
+        "water_in_fuel_flag"
+      ],
+      "related_spns": [
+        94
+      ],
+      "parent_component_id": "hmmwv.fuel.injection_pump",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check filter service interval",
+        "Inspect for water contamination",
+        "Prime and verify flow"
+      ],
+      "material": "Unknown",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.air_filter",
+      "name": "Air Filter/Air Cleaner",
+      "category": "air_filter",
+      "system": "Air induction",
+      "subsystem": "Filtration",
+      "aliases": [
+        "air cleaner"
+      ],
+      "design_life_hours": 1000,
+      "design_life_km": 20000,
+      "standard_service_interval_hours": 250,
+      "criticality": 6.7,
+      "sensitivity": {
+        "thermal": 0.3,
+        "mechanical_torque": 0.1,
+        "vibrational": 0.6,
+        "pressure": 0.8
+      },
+      "failure_modes": [
+        "SealPerished"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "intake_restriction_kpa",
+        "env_dust_level"
+      ],
+      "related_spns": [
+        107
+      ],
+      "parent_component_id": "hmmwv.engine",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Inspect filter loading",
+        "Check intake duct cracks",
+        "Check housing seal"
+      ],
+      "material": "Unknown",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.transmission",
+      "name": "Hydramatic 4L80-E Transmission",
+      "category": "transmission",
+      "system": "Powertrain",
+      "subsystem": "Transmission",
+      "aliases": [
+        "4L80-E",
+        "transmission"
+      ],
+      "design_life_hours": 12000,
+      "design_life_km": 280000,
+      "standard_service_interval_hours": 1000,
+      "criticality": 8.5,
+      "sensitivity": {
+        "thermal": 0.9,
+        "mechanical_torque": 1.0,
+        "vibrational": 0.8,
+        "pressure": 0.6
+      },
+      "failure_modes": [
+        "GearShear",
+        "SplineWear",
+        "BearingWear"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "trans_temp_c",
+        "selected_gear",
+        "vehicle_speed_mps"
+      ],
+      "related_spns": [
+        91,
+        84
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [
+        "hmmwv.transfer_case"
+      ],
+      "inspection_points": [
+        "Check fluid level and smell",
+        "Review shift timing",
+        "Inspect cooler lines"
+      ],
+      "material": "Steel4130_Chromoly",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.transfer_case",
+      "name": "Transfer Case Assembly",
+      "category": "drivetrain",
+      "system": "Powertrain",
+      "subsystem": "Transfer case",
+      "aliases": [
+        "transfer case"
+      ],
+      "design_life_hours": 10000,
+      "design_life_km": 220000,
+      "standard_service_interval_hours": 1000,
+      "criticality": 8.0,
+      "sensitivity": {
+        "thermal": 0.4,
+        "mechanical_torque": 1.0,
+        "vibrational": 0.9,
+        "pressure": 0.4
+      },
+      "failure_modes": [
+        "GearShear",
+        "SplineWear",
+        "BearingWear"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "vehicle_speed_mps",
+        "avg_vibration_level",
+        "terrain_offroad_ratio"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": "hmmwv.transmission",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check leaks",
+        "Verify range selection",
+        "Inspect driveline lash"
+      ],
+      "material": "Steel4130_Chromoly",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.drivetrain.halfshafts",
+      "name": "Halfshafts and CV Joints",
+      "category": "drivetrain",
+      "system": "Drivetrain",
+      "subsystem": "Halfshafts",
+      "aliases": [
+        "halfshafts",
+        "CV joints"
+      ],
+      "design_life_hours": 8500,
+      "design_life_km": 180000,
+      "standard_service_interval_hours": 1000,
+      "criticality": 7.8,
+      "sensitivity": {
+        "thermal": 0.2,
+        "mechanical_torque": 1.0,
+        "vibrational": 1.0,
+        "pressure": 0.2
+      },
+      "failure_modes": [
+        "SplineWear",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "avg_vibration_level",
+        "terrain_offroad_ratio",
+        "vehicle_speed_mps"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": "hmmwv.transfer_case",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Inspect CV boots",
+        "Check shaft play",
+        "Listen for clicking under turn/load"
+      ],
+      "material": "Steel4130_Chromoly",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.front_differential",
+      "name": "Front Torsen Differential",
+      "category": "differential",
+      "system": "Axles",
+      "subsystem": "Front differential",
+      "aliases": [
+        "front diff"
+      ],
+      "design_life_hours": 11000,
+      "design_life_km": 230000,
+      "standard_service_interval_hours": 1000,
+      "criticality": 7.8,
+      "sensitivity": {
+        "thermal": 0.3,
+        "mechanical_torque": 1.0,
+        "vibrational": 0.8,
+        "pressure": 0.4
+      },
+      "failure_modes": [
+        "GearShear",
+        "BearingWear"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "vehicle_speed_mps",
+        "avg_vibration_level"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check gear oil",
+        "Inspect leaks",
+        "Listen for whine under load"
+      ],
+      "material": "Steel4130_Chromoly",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.rear_differential",
+      "name": "Rear Torsen Differential",
+      "category": "differential",
+      "system": "Axles",
+      "subsystem": "Rear differential",
+      "aliases": [
+        "rear diff"
+      ],
+      "design_life_hours": 11000,
+      "design_life_km": 230000,
+      "standard_service_interval_hours": 1000,
+      "criticality": 7.8,
+      "sensitivity": {
+        "thermal": 0.3,
+        "mechanical_torque": 1.0,
+        "vibrational": 0.8,
+        "pressure": 0.4
+      },
+      "failure_modes": [
+        "GearShear",
+        "BearingWear"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "vehicle_speed_mps",
+        "avg_vibration_level"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check gear oil",
+        "Inspect leaks",
+        "Listen for whine under load"
+      ],
+      "material": "Steel4130_Chromoly",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.geared_hubs",
+      "name": "Geared Hubs",
+      "category": "undercarriage",
+      "system": "Axles",
+      "subsystem": "Portal hubs",
+      "aliases": [
+        "portal hubs",
+        "geared hubs"
+      ],
+      "design_life_hours": 9000,
+      "design_life_km": 180000,
+      "standard_service_interval_hours": 1000,
+      "criticality": 8.0,
+      "sensitivity": {
+        "thermal": 0.4,
+        "mechanical_torque": 0.9,
+        "vibrational": 1.0,
+        "pressure": 0.3
+      },
+      "failure_modes": [
+        "GearShear",
+        "BearingWear"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "hub_temp_c",
+        "avg_vibration_level",
+        "vehicle_speed_mps"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check hub oil level",
+        "Inspect hub seals",
+        "Listen for wheel-end noise"
+      ],
+      "material": "Steel4130_Chromoly",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.suspension.ball_joints",
+      "name": "Upper and Lower Ball Joints",
+      "category": "suspension",
+      "system": "Suspension",
+      "subsystem": "Control arms",
+      "aliases": [
+        "ball joints"
+      ],
+      "design_life_hours": 7000,
+      "design_life_km": 160000,
+      "standard_service_interval_hours": 500,
+      "criticality": 7.6,
+      "sensitivity": {
+        "thermal": 0.2,
+        "mechanical_torque": 0.8,
+        "vibrational": 1.0,
+        "pressure": 0.2
+      },
+      "failure_modes": [
+        "BearingWear",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "avg_vibration_level",
+        "terrain_offroad_ratio"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check joint play",
+        "Inspect boots",
+        "Look for uneven tire wear"
+      ],
+      "material": "Steel4130_Chromoly",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.suspension.shocks",
+      "name": "Shock Absorbers",
+      "category": "suspension",
+      "system": "Suspension",
+      "subsystem": "Damping",
+      "aliases": [
+        "shocks"
+      ],
+      "design_life_hours": 6000,
+      "design_life_km": 130000,
+      "standard_service_interval_hours": 500,
+      "criticality": 6.7,
+      "sensitivity": {
+        "thermal": 0.3,
+        "mechanical_torque": 0.7,
+        "vibrational": 1.0,
+        "pressure": 0.5
+      },
+      "failure_modes": [
+        "SealPerished",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "avg_vibration_level",
+        "terrain_offroad_ratio"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Inspect leakage",
+        "Check bushings",
+        "Review vibration trend"
+      ],
+      "material": "Steel1020_Carbon",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.steering.gearbox",
+      "name": "Sheppard M-Series Steering Gear Box",
+      "category": "undercarriage",
+      "system": "Steering",
+      "subsystem": "Steering gear",
+      "aliases": [
+        "steering box"
+      ],
+      "design_life_hours": 10000,
+      "design_life_km": 220000,
+      "standard_service_interval_hours": 1000,
+      "criticality": 7.6,
+      "sensitivity": {
+        "thermal": 0.3,
+        "mechanical_torque": 0.7,
+        "vibrational": 0.7,
+        "pressure": 0.9
+      },
+      "failure_modes": [
+        "SealPerished",
+        "BearingWear"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "steering_pressure_kpa",
+        "vehicle_speed_mps"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check steering play",
+        "Inspect leaks",
+        "Check power steering pump noise"
+      ],
+      "material": "Steel1020_Carbon",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.steering.tie_rods",
+      "name": "Tie Rods and Steering Linkage",
+      "category": "undercarriage",
+      "system": "Steering",
+      "subsystem": "Linkage",
+      "aliases": [
+        "tie rods",
+        "linkage"
+      ],
+      "design_life_hours": 8000,
+      "design_life_km": 180000,
+      "standard_service_interval_hours": 500,
+      "criticality": 7.4,
+      "sensitivity": {
+        "thermal": 0.2,
+        "mechanical_torque": 0.8,
+        "vibrational": 1.0,
+        "pressure": 0.2
+      },
+      "failure_modes": [
+        "BearingWear",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "avg_vibration_level",
+        "terrain_offroad_ratio"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check joint play",
+        "Inspect boots",
+        "Verify alignment symptoms"
+      ],
+      "material": "Steel4130_Chromoly",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.brakes.hydroboost",
+      "name": "Hydro-Boost Brake System",
+      "category": "brake",
+      "system": "Brakes",
+      "subsystem": "Hydraulic assist",
+      "aliases": [
+        "hydroboost"
+      ],
+      "design_life_hours": 8000,
+      "design_life_km": 180000,
+      "standard_service_interval_hours": 500,
+      "criticality": 9.0,
+      "sensitivity": {
+        "thermal": 0.6,
+        "mechanical_torque": 0.5,
+        "vibrational": 0.5,
+        "pressure": 1.0
+      },
+      "failure_modes": [
+        "SealPerished",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "brake_pressure_kpa",
+        "vehicle_speed_mps"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check assist reserve",
+        "Inspect hydraulic leaks",
+        "Verify pedal feel"
+      ],
+      "material": "Rubber_Synthetic",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.brakes.calipers_rotors",
+      "name": "Inboard Disc Brake Calipers and Rotors",
+      "category": "brake",
+      "system": "Brakes",
+      "subsystem": "Wheel brakes",
+      "aliases": [
+        "calipers",
+        "rotors"
+      ],
+      "design_life_hours": 6500,
+      "design_life_km": 140000,
+      "standard_service_interval_hours": 500,
+      "criticality": 8.3,
+      "sensitivity": {
+        "thermal": 0.9,
+        "mechanical_torque": 0.6,
+        "vibrational": 0.7,
+        "pressure": 0.4
+      },
+      "failure_modes": [
+        "VibrationalFatigue",
+        "SealPerished"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "brake_application_count",
+        "vehicle_speed_mps",
+        "brake_temp_c"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": "hmmwv.brakes.hydroboost",
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check pad thickness",
+        "Inspect rotor heat checking",
+        "Inspect caliper leaks"
+      ],
+      "material": "Steel1020_Carbon",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.electrical.glow_plug_controller",
+      "name": "Glow Plug Controller",
+      "category": "electronics",
+      "system": "Electrical",
+      "subsystem": "Cold start",
+      "aliases": [
+        "glow plug controller"
+      ],
+      "design_life_hours": 6000,
+      "design_life_km": 120000,
+      "standard_service_interval_hours": 500,
+      "criticality": 6.8,
+      "sensitivity": {
+        "thermal": 0.7,
+        "mechanical_torque": 0.1,
+        "vibrational": 0.5,
+        "pressure": 0.1
+      },
+      "failure_modes": [
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "battery_voltage",
+        "glow_plug_duty_pct",
+        "ambient_temp_c"
+      ],
+      "related_spns": [
+        168
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check cold-start cycle",
+        "Inspect relay connections",
+        "Verify plug resistance"
+      ],
+      "material": "Unknown",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.electrical.batteries",
+      "name": "24V Battery Pair",
+      "category": "battery",
+      "system": "Electrical",
+      "subsystem": "Power storage",
+      "aliases": [
+        "batteries"
+      ],
+      "design_life_hours": 5500,
+      "design_life_km": 110000,
+      "standard_service_interval_hours": 250,
+      "criticality": 7.2,
+      "sensitivity": {
+        "thermal": 0.8,
+        "mechanical_torque": 0.1,
+        "vibrational": 0.6,
+        "pressure": 0.1
+      },
+      "failure_modes": [
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "battery_voltage",
+        "starter_current_a"
+      ],
+      "related_spns": [
+        168
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Load-test batteries",
+        "Inspect terminals",
+        "Check ground straps"
+      ],
+      "material": "Unknown",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.electrical.alternator",
+      "name": "NIEHOFF Alternator",
+      "category": "electronics",
+      "system": "Electrical",
+      "subsystem": "Charging",
+      "aliases": [
+        "alternator"
+      ],
+      "design_life_hours": 8000,
+      "design_life_km": 180000,
+      "standard_service_interval_hours": 500,
+      "criticality": 7.5,
+      "sensitivity": {
+        "thermal": 0.6,
+        "mechanical_torque": 0.4,
+        "vibrational": 0.7,
+        "pressure": 0.2
+      },
+      "failure_modes": [
+        "BearingWear",
+        "VibrationalFatigue"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "battery_voltage",
+        "charging_current_a",
+        "engine_speed_rpm"
+      ],
+      "related_spns": [
+        168
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check charging voltage",
+        "Inspect belt tension",
+        "Listen for bearing noise"
+      ],
+      "material": "Steel1020_Carbon",
+      "dimensions": 1.0
+    },
+    {
+      "id": "hmmwv.tires",
+      "name": "Goodyear Wrangler MT Tires",
+      "category": "tire",
+      "system": "Tires",
+      "subsystem": "Tires and wheels",
+      "aliases": [
+        "tires",
+        "Wrangler MT"
+      ],
+      "design_life_hours": 3500,
+      "design_life_km": 50000,
+      "standard_service_interval_hours": 250,
+      "criticality": 7.0,
+      "sensitivity": {
+        "thermal": 0.5,
+        "mechanical_torque": 0.9,
+        "vibrational": 0.8,
+        "pressure": 0.9
+      },
+      "failure_modes": [
+        "VibrationalFatigue",
+        "SealPerished"
+      ],
+      "rated_gvw_kg": 4672,
+      "part_numbers": [],
+      "related_signal_keys": [
+        "tire_pressure_psi",
+        "terrain_offroad_ratio",
+        "vehicle_speed_mps"
+      ],
+      "related_spns": [
+        84
+      ],
+      "parent_component_id": null,
+      "child_component_ids": [],
+      "inspection_points": [
+        "Check tread depth",
+        "Inspect sidewall cuts",
+        "Verify inflation pressure"
+      ],
+      "material": "Rubber_Synthetic",
+      "dimensions": 1.0
+    }
+  ]
+}

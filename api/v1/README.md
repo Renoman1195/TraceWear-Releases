@@ -10,3 +10,6 @@ This folder contains the first public static JSON endpoints for TraceWear cloud 
 
 These files are public seed data. Source-backed operational data should move
 through review before promotion into active component libraries.
+
+Seeded HMMWV variants currently include the M998 base utility profile, the
+M1151A1 up-armored profile, and an M1151A1 up-armored turret configuration.

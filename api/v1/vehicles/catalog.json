@@ -1,6 +1,6 @@
 {
   "schema": "tracewear.cloud_catalog.v1",
-  "generated_at": "2026-06-25T00:00:00Z",
+  "generated_at": "2026-06-26T00:00:00Z",
   "channel": "stable",
   "organization_id": "tracewear-public",
   "vehicles": [
@@ -15,10 +15,39 @@
       "status": "seed"
     },
     {
-      "profile_id": "hmmwv_m1151a1",
-      "display_name": "HMMWV M1151A1",
+      "profile_id": "hmmwv",
+      "display_name": "HMMWV M998 Base Utility",
       "vehicle_type": "HMMWV",
+      "asset_family": "HMMWV",
+      "asset_variant": "M998 Base utility",
+      "configuration": "standard",
+      "component_library_url": "https://tracewearcloud.z19.web.core.windows.net/api/v1/component-libraries/hmmwv-m998.json",
+      "parts_staging_url": "",
+      "diagnostic_map_url": "https://tracewearcloud.z19.web.core.windows.net/api/v1/diagnostics/j1939-map.json",
+      "cost_model_url": "https://tracewearcloud.z19.web.core.windows.net/api/v1/cost-models/default.json",
+      "status": "seed"
+    },
+    {
+      "profile_id": "hmmwv_m1151a1",
+      "display_name": "HMMWV M1151A1 Up-armored",
+      "vehicle_type": "HMMWV",
+      "asset_family": "HMMWV",
+      "asset_variant": "M1151A1 Up-armored",
+      "configuration": "up-armored",
       "component_library_url": "https://tracewearcloud.z19.web.core.windows.net/api/v1/component-libraries/hmmwv-m1151a1.json",
+      "parts_staging_url": "",
+      "diagnostic_map_url": "https://tracewearcloud.z19.web.core.windows.net/api/v1/diagnostics/j1939-map.json",
+      "cost_model_url": "https://tracewearcloud.z19.web.core.windows.net/api/v1/cost-models/default.json",
+      "status": "seed"
+    },
+    {
+      "profile_id": "hmmwv_m1151a1_turret",
+      "display_name": "HMMWV M1151A1 Up-armored Turret",
+      "vehicle_type": "HMMWV",
+      "asset_family": "HMMWV",
+      "asset_variant": "M1151A1 Up-armored turret",
+      "configuration": "up-armored-turret",
+      "component_library_url": "https://tracewearcloud.z19.web.core.windows.net/api/v1/component-libraries/hmmwv-m1151a1-turret.json",
       "parts_staging_url": "",
       "diagnostic_map_url": "https://tracewearcloud.z19.web.core.windows.net/api/v1/diagnostics/j1939-map.json",
       "cost_model_url": "https://tracewearcloud.z19.web.core.windows.net/api/v1/cost-models/default.json",
